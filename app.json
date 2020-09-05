@@ -1,0 +1,12 @@
+{
+  "name": "StoryWriter",
+  "displayName": "StoryWriter",
+  "expo": {
+    "name": "StoryWriter",
+    "slug": "StoryWriter",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
