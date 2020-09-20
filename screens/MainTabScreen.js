@@ -21,7 +21,7 @@ const MainTabScreen = () => (
     <Tab.Navigator
         initialRouteName="Home"
         activeColor="#fff"
-        // style={{ backgroundColor: 'tomato' }}
+    // style={{ backgroundColor: 'tomato' }}
     >
         <Tab.Screen
             name="Home"
@@ -80,7 +80,7 @@ const HomeStackScreen = ({ navigation }) => (
         headerTintColor: '#fff',
         headerTitleStyle: {
             fontWeight: 'bold',
-        } 
+        }
     }}>
         <HomeStack.Screen name="Home" component={HomeScreen}
             options={{
@@ -108,7 +108,7 @@ const DetailStackScreen = ({ navigation }) => (
         <DetailStack.Screen name="Details" component={DetailScreen}
             options={{
                 headerLeft: () => (
-                    <Icon.Button name="anfroid-menu" size={25}
+                    <Icon.Button name="ios-menu" size={25}
                         backgroundColor="#009387" onPress={() =>
                             navigation.
                                 openDrawer()
@@ -130,7 +130,7 @@ const ProfileStackScreen = ({ navigation }) => (
         <ProfileStack.Screen name="Profile" component={ProfileScreen}
             options={{
                 headerLeft: () => (
-                    <Icon.Button name="anfroid-menu" size={25}
+                    <Icon.Button name="ios-menu" size={25}
                         backgroundColor="#009387" onPress={() =>
                             navigation.
                                 openDrawer()
@@ -152,7 +152,7 @@ const ExploreStackScreen = ({ navigation }) => (
         <ExploreStack.Screen name="Explore" component={DetailScreen}
             options={{
                 headerLeft: () => (
-                    <Icon.Button name="anfroid-menu" size={25}
+                    <Icon.Button name="ios-menu" size={25}
                         backgroundColor="#009387" onPress={() =>
                             navigation.
                                 openDrawer()
