@@ -10,10 +10,10 @@ import {
 const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text>Home Screen</Text>
+            <Text>Profile Screen</Text>
             <Button
-                title="Go to Details Screen"
-                onPress={() => navigation.navigate("Details")}
+                title="Click me"
+                onPress={() => alert("Button Clicked")}
             />
         </View>
     );

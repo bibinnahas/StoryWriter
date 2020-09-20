@@ -7,7 +7,7 @@ import Icons from 'react-native-vector-icons/Ionicons'
 import HomeScreen from './HomeScreen';
 import DetailScreen from './DetailsScreen';
 import ProfileScreen from './ProfileScreen';
-import ExploreScreen from './DetailsScreen';
+import ExploreScreen from './ExploreScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const HomeStack = createStackNavigator();
@@ -149,7 +149,7 @@ const ExploreStackScreen = ({ navigation }) => (
             fontWeight: 'bold',
         }
     }}>
-        <ExploreStack.Screen name="Explore" component={DetailScreen}
+        <ExploreStack.Screen name="Explore" component={ExploreScreen}
             options={{
                 headerLeft: () => (
                     <Icon.Button name="ios-menu" size={25}
