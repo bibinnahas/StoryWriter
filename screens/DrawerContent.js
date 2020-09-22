@@ -25,11 +25,104 @@ import Icons from 'react-native-vector-icons/MaterialCommunityIcons'
 // import { Icon } from 'react-native-paper/lib/typescript/src/components/Avatar/Avatar';
 
 export function DrawerContent(props) {
+
+    const [isDarkTheme, setIsDarkTheme] = React.useState(false);
+
+    const toggleTheme = () => {
+        setIsDarkTheme(!isDarkTheme);
+    }
+
     return (
         <View style={{ flex: 1 }}>
             <DrawerContentScrollView {...props}>
-                <View>
-                    <Text>Main Content</Text>
+                <View style={styles.drawerContent}>
+                    <View style={styles.userInfoSection}>
+                        <View style={{ flexDirection: 'row', marginTop: 15 }}>
+                            <Avatar.Image
+                                source={{
+                                    uri: 'https://api.adorable.io/avatars/50/abott@adorable.png'
+                                }}
+                                size={50}
+                            />
+                            <View style={{
+                                marginLeft: 15, flexDirection: 'column'
+                            }}>
+                                <Title style={styles.title}>
+                                    Bibin Nahas
+                                </Title>
+                                <Caption style={styles.caption}>
+                                    @bbnnaz
+                                </Caption>
+                            </View>
+                        </View>
+                        <View style={styles.row}>
+                            <View style={styles.section}>
+                                <Paragraph style={[styles.paragraph, styles.caption]}>80</Paragraph>
+                                <Caption style={styles.caption}> Following</Caption>
+                            </View>
+                            <View style={styles.section}>
+                                <Paragraph style={[styles.paragraph, styles.caption]}>1030</Paragraph>
+                                <Caption style={styles.caption}> Followers</Caption>
+                            </View>
+                        </View>
+                    </View>
+                    <Drawer.Section style={styles.drawerSection}>
+                        <DrawerItem
+                            Icon={({ color, size }) => (
+                                <Icon
+                                    name="home-outline"
+                                    color={color}
+                                    size={size}
+                                />
+                            )}
+                            label="Home"
+                            onPress={() => { props.navigation.navigate('Home') }}
+                        />
+                        <DrawerItem
+                            Icon={({ color, size }) => (
+                                <Icon
+                                    name="account-outline"
+                                    color={color}
+                                    size={size}
+                                />
+                            )}
+                            label="Profile"
+                            onPress={() => { props.navigation.navigate('Profile') }}
+                        />
+                        <DrawerItem
+                            Icon={({ color, size }) => (
+                                <Icon
+                                    name="settings-outline"
+                                    color={color}
+                                    size={size}
+                                />
+                            )}
+                            label="Settings"
+                            onPress={() => { props.navigation.navigate('SettingsScreen') }}
+                        />
+                        <DrawerItem
+                            Icon={({ color, size }) => (
+                                <Icon
+                                    name="account-check-outline"
+                                    color={color}
+                                    size={size}
+                                />
+                            )}
+                            label="Support"
+                            onPress={() => { props.navigation.navigate('SupportScreen') }}
+                        />
+                    </Drawer.Section>
+                    <Drawer.Section title="Preferences">
+                        <TouchableRipple onPress={() => { toggleTheme() }}>
+                            <View style={styles.preference}>
+                                <Text> Dark Theme</Text>
+                                <View pointerEvents="none">
+                                    <Switch value={isDarkTheme} />
+                                </View>
+
+                            </View>
+                        </TouchableRipple>
+                    </Drawer.Section>
                 </View>
             </DrawerContentScrollView>
             <Drawer.Section style={styles.bottomDrawerSection}>
